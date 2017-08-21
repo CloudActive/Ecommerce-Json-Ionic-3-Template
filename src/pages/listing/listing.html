@@ -1,0 +1,31 @@
+<ion-header class="listing-header">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="header-logo">
+        {{'HOME' | translate}}
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="listing-content">
+  <background-image class="image-heading" [src]="listing.banner_image">
+    <ion-row class="heading-row">
+      <ion-col no-padding offset-100>
+        <h2 class="main-title">{{listing.banner_title}}</h2>
+      </ion-col>
+    </ion-row>
+  </background-image>
+
+  <h4 class="categories-title">{{'LASTVISIT' | translate}}</h4>
+  <data-scroll-x [dataListX]="listing.lastvisit"></data-scroll-x>
+
+  <h4 class="categories-title">{{'POPULARSHOPS' | translate}} <span class="see-all" (click)="openPageShopList()">see all</span></h4>
+  <data-grid [dataGrids]="listing.popularshops"></data-grid>
+
+  <h4 class="categories-title">{{'POPULARPRODUCTS' | translate}} <span class="see-all" (click)="openPageProductList()">see all</span></h4>
+  <data-scroll-x [dataListX]="listing.popularproducts"></data-scroll-x>
+</ion-content>
